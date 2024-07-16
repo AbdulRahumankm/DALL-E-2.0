@@ -14,6 +14,10 @@ app.use(cors());
 
 app.use(express.json({ limit: "50mb" }));
 
+
+app.get('/api/v1/post', postRoutes)
+app.get('/api/v1/dalleRoutes')
+
 app.get("/", async (req, res) => {
   res.send("Hello from DELL-E");
 });
