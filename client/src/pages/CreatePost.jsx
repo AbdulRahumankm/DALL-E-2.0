@@ -23,16 +23,16 @@ const CreatePost = () => {
   const handleSurpriseMe = () => {};
 
   return (
-    <section className="max-w-7xl">
+    <section className="max-w-3xl mx-auto">
       <div>
-        <h1 className="font-extrabold text-[#222328]">Create</h1>
+        <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
         <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
           Create imaginative and visually stunning images through DALL-E AI and
           share them with the Community
         </p>
       </div>
       <section>
-        <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
+        <form className="mt-10 max-w-3xl" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-5">
             <FormField
               labalName="Your name"
@@ -76,14 +76,24 @@ const CreatePost = () => {
             </div>
           </div>
           <div className="mt-5 flex gap-5d">
-            <button 
-            type="button" 
-            onClick={generateImage}
-            className="text-white bg-green-700 font-medium rounded-md text-sm px-5 py-2.5 text-center w-full sm:w-auto"
+            <button
+              type="button"
+              onClick={generateImage}
+              className="text-white bg-green-700 font-medium rounded-md text-sm px-5 py-2.5 text-center w-full sm:w-auto"
             >
-                {genertingImg ? 'Generating...' : 'Generate'}
+              {genertingImg ? "Generating..." : "Generate"}
             </button>
+          
           </div>
+          <div className="mt-10">
+                <p className="mt-2 text-[#666e75] text-[14px]">Once you have created the image you want, you can share it with others in the Community</p>
+                <button
+                type="submit"
+                className="text-white bg-[#6469ff] font-medium rounded-md text-sm px-5 py-2.5 text-center w-full sm:w-auto mt-3"
+                >
+                    {loading ? 'Sharing...' : 'Share with the community'}
+                </button>
+            </div>
         </form>
       </section>
     </section>
