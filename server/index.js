@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 import cors from "cors";
 
 import postRoutes from './routes/postRoutes.js'
-import delleRoutes from './routes/delleRoutes.js'
+import dalleRoutes from './routes/dalleRoutes.js'
 
 import connectDB from "./mongoDB/connect.js";
 
@@ -16,7 +16,7 @@ app.use(express.json({ limit: "50mb" }));
 
 
 app.get('/api/v1/post', postRoutes)
-app.get('/api/v1/dalleRoutes')
+app.get('/api/v1/dalle', dalleRoutes)
 
 app.get("/", async (req, res) => {
   res.send("Hello from DELL-E");
@@ -29,7 +29,7 @@ const startServer = async () => {
       console.log("Server has started on port http://localhost:8080")
     );
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
